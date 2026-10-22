@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 30% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 30% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 20%;
+    --primary: 210 50% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 60% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 43 60% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 50% 24%;
+    --radius: 0.625rem;
+  }
+  .dark {
+    --background: 210 40% 10%;
+    --foreground: 0 0% 95%;
+    --card: 210 35% 13%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 35% 13%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 43 60% 47%;
+    --primary-foreground: 210 40% 10%;
+    --secondary: 210 30% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 25% 18%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 210 30% 20%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 210 25% 20%;
+    --input: 210 25% 20%;
+    --ring: 43 60% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01";
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .prose-fa h2 {
+    @apply text-2xl font-bold mt-8 mb-4 text-primary;
+  }
+  .prose-fa h3 {
+    @apply text-xl font-semibold mt-6 mb-3;
+  }
+  .prose-fa p {
+    @apply leading-8 mb-4 text-muted-foreground;
+  }
+  .prose-fa ul {
+    @apply list-disc pr-6 mb-4 space-y-2 text-muted-foreground;
+  }
+  .prose-fa ol {
+    @apply list-decimal pr-6 mb-4 space-y-2 text-muted-foreground;
+  }
+  .prose-fa li {
+    @apply leading-7;
+  }
+  .prose-fa a {
+    @apply text-accent underline hover:opacity-80;
+  }
+  .prose-fa strong {
+    @apply text-foreground font-semibold;
+  }
+}
