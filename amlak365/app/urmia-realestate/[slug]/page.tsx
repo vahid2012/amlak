@@ -1,38 +1,33 @@
-import Link from 'next/link'
-
-// 🌟 لیست تمام خیابان‌ها و محله‌های شما اینجاست. 
-// فقط کافیه اسم انگلیسی خیابان رو با خط تیره اینجا بنویسید. بقیه کارها خودکاره!
-const ALL_STREETS = [
-  'golshahr',
+// 🌟 این لیست جادویی شماست. 
+// هر اسمی که اینجا بنویسید، سایت به صورت خودکار صفحه آن را می‌سازد!
+const ALL_PAGES = [
   'molavi',
-  'khayyam',
+  'golshahr',
   'bakery',
   'shahrak-issar',
   'amin',
-  // 👇 هر خیابان جدیدی خواستید، فقط اسمش رو اینجا اضافه کنید
+  'khayyam',
+  // 👇 اسم خیابان‌های دیگر را اینجا اضافه کنید
 ];
 
-// این تابع به Next.js میگه برای تمام لیست بالا، صفحه بساز
+// این به Next.js می‌گوید تمام این صفحات را موقع بیلد بساز
 export function generateStaticParams() {
-  return ALL_STREETS.map((slug) => ({
+  return ALL_PAGES.map((slug) => ({
     slug: slug,
   }));
 }
 
-// نمایش صفحه هر خیابان
-export default function StreetPage({ params }: { params: { slug: string } }) {
+// این تابع صفحه را نشان می‌دهد (کد اصلاح شده برای Next.js 15)
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const pageName = resolvedParams.slug;
+
   return (
-    <main className="container mx-auto px-4 py-12 min-h-[50vh]">
-      <div className="mb-6">
-        <Link href="/urmia-realestate/" className="text-blue-600 hover:underline">← بازگشت به املاک ارومیه</Link>
-      </div>
-      
-      <h1 className="text-3xl font-bold mb-6">
-        املاک خیابان {params.slug}
+    <div style={{ padding: '40px', direction: 'rtl', minHeight: '80vh', color: 'black' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>
+        املاک {pageName}
       </h1>
-      <p className="text-gray-600 text-lg">
-        لیست آگهی‌های خرید، فروش و اجاره در این خیابان به زودی اینجا قرار می‌گیرد...
-      </p>
-    </main>
-  )
+      <p>لیست آگهی‌های این منطقه به زودی در این صفحه قرار می‌گیرد.</p>
+    </div>
+  );
 }
