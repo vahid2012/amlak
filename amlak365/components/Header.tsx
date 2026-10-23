@@ -10,6 +10,14 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
 
+  // 🌟 این تابع جادویی است: به هر لینکی که با / شروع شود، پیشوند urmia-realestate را اضافه می‌کند
+  const getNewHref = (href: string) => {
+    if (href.startsWith('/')) {
+      return `/urmia-realestate${href}`;
+    }
+    return href;
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-primary text-primary-foreground shadow-md">
       <div className="container-page flex h-16 items-center justify-between gap-4">
@@ -39,7 +47,7 @@ export function Header() {
                     {group.links.map((link) => (
                       <Link
                         key={link.href}
-                        href={link.href}
+                        href={getNewHref(link.href)}
                         className="block px-4 py-2 text-sm transition-colors hover:bg-muted"
                       >
                         {link.label}
@@ -51,7 +59,6 @@ export function Header() {
             </div>
           ))}
           
-          {/* ✅ اصلاح شد: لینک مناطق در دسکتاپ */}
           <Link href="/urmia-realestate/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
             مناطق
           </Link>
@@ -92,7 +99,7 @@ export function Header() {
                 {group.links.map((link) => (
                   <Link
                     key={link.href}
-                    href={link.href}
+                    href={getNewHref(link.href)}
                     className="block px-4 py-1.5 text-sm rounded-md hover:bg-white/10"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -103,7 +110,6 @@ export function Header() {
             ))}
             <div className="border-t border-white/10 pt-2 mt-2 space-y-1">
               
-              {/* ✅ اصلاح شد: لینک مناطق در موبایل */}
               <Link href="/urmia-realestate/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
                 مناطق
               </Link>
