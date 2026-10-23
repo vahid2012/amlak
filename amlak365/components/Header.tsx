@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { site, navGroups } from '@/lib/site';
-import { cn } from '@/lib/utils';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -62,10 +61,11 @@ export function Header() {
           <Link href="/urmia-realestate/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
             مناطق
           </Link>
-          <Link href="/blog/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
+          {/* اینجا هم پیشوند را به وبلاگ و تماس اضافه کردیم */}
+          <Link href="/urmia-realestate/blog/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
             وبلاگ
           </Link>
-          <Link href="/contact/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
+          <Link href="/urmia-realestate/contact/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
             تماس
           </Link>
         </nav>
@@ -113,10 +113,10 @@ export function Header() {
               <Link href="/urmia-realestate/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
                 مناطق
               </Link>
-              <Link href="/blog/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
+              <Link href="/urmia-realestate/blog/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
                 وبلاگ
               </Link>
-              <Link href="/contact/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
+              <Link href="/urmia-realestate/contact/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
                 تماس
               </Link>
             </div>
