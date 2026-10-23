@@ -1,1 +1,9 @@
-
+{
+  "redirects": [
+    {
+      "source": "/districts/:path*",
+      "destination": "/urmia/:path*",
+      "permanent": true
+    }
+  ]
+}
