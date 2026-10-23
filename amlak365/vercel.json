@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/districts/:path*",
-      "destination": "/urmia-realestate/:path*",
-      "permanent": true
+      "source": "/urmia-realestate/:path+",
+      "destination": "/:path+"
     }
   ]
 }
