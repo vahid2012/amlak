@@ -50,7 +50,9 @@ export function Header() {
               )}
             </div>
           ))}
-          <Link href="/districts/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
+          
+          {/* ✅ اصلاح شد: لینک مناطق در دسکتاپ */}
+          <Link href="/urmia-realestate/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
             مناطق
           </Link>
           <Link href="/blog/" className="px-3 py-2 text-sm font-medium rounded-md transition-colors hover:bg-white/10">
@@ -100,7 +102,9 @@ export function Header() {
               </div>
             ))}
             <div className="border-t border-white/10 pt-2 mt-2 space-y-1">
-              <Link href="/districts/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
+              
+              {/* ✅ اصلاح شد: لینک مناطق در موبایل */}
+              <Link href="/urmia-realestate/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
                 مناطق
               </Link>
               <Link href="/blog/" className="block px-2 py-1.5 text-sm font-medium hover:bg-white/10 rounded-md" onClick={() => setMobileOpen(false)}>
