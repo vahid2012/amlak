@@ -1,20 +1,28 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-export default function UrmiaPage() {
+export default function UrmiaRealEstatePage() {
   return (
-    <main className="container mx-auto px-4 py-12 min-h-[50vh]">
-      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">املاک شهر ارومیه</h1>
+    <div style={{ padding: '40px', direction: 'rtl', minHeight: '80vh', color: 'black' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '20px' }}>املاک شهر ارومیه</h1>
+      <p>لطفا منطقه یا خیابان مورد نظر خود را انتخاب کنید:</p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="border p-6 rounded-lg shadow-sm bg-white">
-          <h2 className="text-2xl font-bold mb-4 text-blue-800">محله‌ها و خیابان‌های محبوب</h2>
-          <ul className="space-y-3 text-lg">
-            <li><Link href="/urmia-realestate/golshahr/" className="text-blue-600 hover:underline">املاک گلشهر</Link></li>
-            <li><Link href="/urmia-realestate/molavi/" className="text-blue-600 hover:underline">املاک مولوی</Link></li>
-            <li><Link href="/urmia-realestate/khayyam/" className="text-blue-600 hover:underline">املاک خیابان خیام</Link></li>
-          </ul>
-        </div>
-      </div>
-    </main>
-  )
+      <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px', fontSize: '20px' }}>
+        <li style={{ marginBottom: '15px' }}>
+          <Link href="/urmia-realestate/molavi/" style={{ color: 'blue', textDecoration: 'underline' }}>
+            املاک خیابان مولوی
+          </Link>
+        </li>
+        <li style={{ marginBottom: '15px' }}>
+          <Link href="/urmia-realestate/golshahr/" style={{ color: 'blue', textDecoration: 'underline' }}>
+            املاک محله گلشهر
+          </Link>
+        </li>
+        <li style={{ marginBottom: '15px' }}>
+          <Link href="/urmia-realestate/bakery/" style={{ color: 'blue', textDecoration: 'underline' }}>
+            املاک خیابان باکری
+          </Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
