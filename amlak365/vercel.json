@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/:path((?!urmia-realestate|_next|api|favicon.ico|.*\\..*).*)",
+      "destination": "/urmia-realestate/:path",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/urmia-realestate/:path+",
