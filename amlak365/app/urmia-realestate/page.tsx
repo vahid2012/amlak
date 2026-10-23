@@ -1,20 +1,20 @@
-// 🌟 اینجا لیست خیابان‌ها و محله‌های شماست. هر چقدر بخواهید می‌توانید به این لیست اضافه کنید.
-// فقط دقت کنید که نام داخل لینک (قدم دوم) با نام اینجا یکی باشد.
-export function generateStaticParams() {
-  return [
-    { slug: 'golshahr' },
-    { slug: 'molavi' },
-    { slug: 'bakery' },
-    { slug: 'shahrak-issar' },
-    { slug: 'amin' },
-  ]
-}
+import Link from 'next/link'
 
-export default function NeighborhoodPage({ params }: { params: { slug: string } }) {
+export default function UrmiaPage() {
   return (
-    <main style={{ padding: '20px' }}>
-      <h1>صفحه املاک محله: {params.slug}</h1>
-      <p>آگهی‌های این محله به زودی قرار می‌گیرند...</p>
+    <main className="container mx-auto px-4 py-12 min-h-[50vh]">
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">املاک شهر ارومیه</h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="border p-6 rounded-lg shadow-sm bg-white">
+          <h2 className="text-2xl font-bold mb-4 text-blue-800">محله‌ها و خیابان‌های محبوب</h2>
+          <ul className="space-y-3 text-lg">
+            <li><Link href="/urmia-realestate/golshahr/" className="text-blue-600 hover:underline">املاک گلشهر</Link></li>
+            <li><Link href="/urmia-realestate/molavi/" className="text-blue-600 hover:underline">املاک مولوی</Link></li>
+            <li><Link href="/urmia-realestate/khayyam/" className="text-blue-600 hover:underline">املاک خیابان خیام</Link></li>
+          </ul>
+        </div>
+      </div>
     </main>
   )
 }
