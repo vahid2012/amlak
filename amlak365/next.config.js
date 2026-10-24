@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: { unoptimized: true },
-  trailingSlash: true,
-  eslint: {
-    ignoreDuringBuilds: true,
+  trailingSlash: true, // این خط مشکل اسلش گوگل را حل می‌کند
+  async redirects() {
+    return [
+      // اگر مسیری تغییر کرده، اینجا ریدایرکت 308 بذار
+      {
+        source: '/urmia-realestate/:slug',
+        destination: '/urmia-realestate/:slug/',
+        permanent: true,
+      },
+    ]
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
